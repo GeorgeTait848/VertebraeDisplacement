@@ -8,12 +8,12 @@ clf;
 % symbolic stuff for testing
 
 M = 10;
+%spring constants
 C1 = 100;
-C2 = 100;
-C3 = 100;
+C2 = 10;
+%damping constants
 K1 = 10;
 K2 = 10;
-K3 = 10;
 
 hold on;
 
@@ -25,7 +25,7 @@ ODE1 = M*diff(y1,t,2) == - C1*(2*y1-y2) - K1*(2*diff(y1,t)-diff(y2));
 
 ODE2 = M*diff(y2,t,2) == - C2*(2*y2-y1-y3) - K2*(2*diff(y2,t)-diff(y3,t)-diff(y1,t));
 
-ODE3 = M*diff(y3,t,2) == - C3*(2*y3-y2) - K3*(2*diff(y3,t)-diff(y2,t));
+ODE3 = M*diff(y3,t,2) == - C2*(2*y3-y2) - K2*(2*diff(y3,t)-diff(y2,t));
 
 [V,S] = odeToVectorField([ODE1, ODE2, ODE3]);
 V(2,1) = V(2,1) + h;
