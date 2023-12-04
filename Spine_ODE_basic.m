@@ -10,10 +10,10 @@ clf;
 M = 10;
 %spring constants
 C1 = 100;
-C2 = 10;
+C2 = 100;
 %damping constants
-K1 = 10;
-K2 = 10;
+K1 = 100;
+K2 = 100;
 
 hold on;
 

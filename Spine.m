@@ -126,14 +126,14 @@ classdef Spine
             end
 
             dydt = zeros(self.len, 2);
-            dydt(1) = self.bottomVertDerivs(t);
+            dydt(1, :) = self.bottomVertDerivs(t);
 
 
             for i = 2:self.len-1
-                dydt(i) = self.middleVertDerivs(i);
+                dydt(i, :) = self.middleVertDerivs(i);
             end
 
-            dydt(self.len) = self.topVertDerivs();
+            dydt(self.len, :) = self.topVertDerivs();
 
         end
     end
